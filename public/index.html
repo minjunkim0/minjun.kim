@@ -14,7 +14,7 @@ body {
   height: 100%;
 }
 body {
-  background: #fff;
+  background: #333;
   font-family: Nunito, Monaco, monospace, serif;
   font-size: .8em;
 }
@@ -46,22 +46,21 @@ li:last-child:after {
 }
 span,
 li:after {
-  color: #bbb;
+  color: #555;
 }
 a:link, a:visited {
-  color: #777;
+  color: #999;
   text-decoration: none;
   transition: color .3s;
 }
 a:hover, a:focus{
   color: #eee;
-  color: #333;
 }
 a:active {
   text-decoration: underline;
 }
 a span {
-  color: #333;
+  color: #888;
   display: none;
 }
 a span:before {
@@ -71,25 +70,25 @@ a:hover span, a:focus span{
   display: inline;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   body {
-    background: #333;
+    background: #fff;
   }
   h1 {
-    color: #eee;
+    color: #555;
   }
   span,
   li:after {
-    color: #555;
+    color: #bbb;
   }
   a:link, a:visited{
-    color: #999;
+    color: #777;
   }
   a:hover, a:focus{
-    color: #eee;
+    color: #555;
   }
   a span {
-    color: #888;
+    color: #555;
   }
 }
 </style>

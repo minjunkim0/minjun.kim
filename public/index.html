@@ -6,76 +6,100 @@
 <title>minjun.kim</title>
 <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 <style>
-html,body{
-	position: relative;
-	margin: 0;
-	padding: 0;
-	height: 100%;
+html,
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
-body{
-	background: #333;
-	font-family: Nunito, Monaco, monospace, serif;
-	font-size: .8em;
+body {
+  background: #fff;
+  font-family: Nunito, Monaco, monospace, serif;
+  font-size: .8em;
 }
-h1{
-	color: #eee;
-	font-size: 3em;
-	margin: 20px;
-	font-weight: normal;
+h1 {
+  color: #eee;
+  font-size: 3em;
+  margin: 20px;
+  font-weight: normal;
 }
-ul{
-	margin: 20px;
-	padding: 0;
+ul {
+  margin: 20px;
+  padding: 0;
 }
-ul:after{
-	clear: both;
-	display: block;
-	content: '';
+ul:after {
+  clear: both;
+  display: block;
+  content: '';
 }
-li{
-	list-style: none;
-	float: left;
+li {
+  list-style: none;
+  float: left;
 }
-li:after{
-	content: '|';
-	margin: 0 5px;
+li:after {
+  content: '|';
+  margin: 0 5px;
 }
-li:last-child:after{
-	content: none;
+li:last-child:after {
+  content: none;
 }
 span,
-li:after{
-	color: #555;
+li:after {
+  color: #bbb;
 }
-a:link, a:visited{
-	color: #999;
-	text-decoration: none;
+a:link, a:visited {
+  color: #777;
+  text-decoration: none;
   transition: color .3s;
 }
 a:hover, a:focus{
-	color: #eee;
+  color: #eee;
+  color: #333;
 }
-a:active{
-	text-decoration: underline;
+a:active {
+  text-decoration: underline;
 }
-a span{
-  color: #888;
+a span {
+  color: #333;
   display: none;
 }
-a span:before{
+a span:before {
   content: ' ';
 }
 a:hover span, a:focus span{
   display: inline;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #333;
+  }
+  h1 {
+    color: #eee;
+  }
+  span,
+  li:after {
+    color: #555;
+  }
+  a:link, a:visited{
+    color: #999;
+  }
+  a:hover, a:focus{
+    color: #eee;
+  }
+  a span {
+    color: #888;
+  }
 }
 </style>
 </head>
 <body>
 <h1>minjun<span>.</span>kim</h1>
 <ul>
-	<li><a href="https://www.linkedin.com/in/minjunk">Linkedin</a></li>
-	<li><a href="https://instagram.com/3600s">Instagram</a></li>
-	<li><a href="mailto:me@minjun.kim">Mail to<span>me@minjun.kim</span></a></li>
+  <li><a href="https://www.linkedin.com/in/minjunk">Linkedin</a></li>
+  <li><a href="https://instagram.com/3600s">Instagram</a></li>
+  <li><a href="mailto:me@minjun.kim">Mail to<span>me@minjun.kim</span></a></li>
 </ul>
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

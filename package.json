@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "serve public"
+  },
+  "devDependencies": {
+    "serve": "^11.1.0"
+  }
+}

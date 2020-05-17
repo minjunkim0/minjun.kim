@@ -1,19 +1,19 @@
 :root {
-  --background-color: #fff;
-  --logo-color: #555;
-  --logo-dot-color: #bbb;
-  --link-color: #777;
-  --link-focus-color: #555;
+  --background-color: #333;
+  --logo-color: #eee;
+  --logo-dot-color: #555;
+  --link-color: #999;
+  --link-focus-color: #eee;
   --link-sep-color: #555;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --background-color: #333;
-    --logo-color: #eee;
-    --logo-dot-color: #555;
-    --link-color: #999;
-    --link-focus-color: #eee;
+    --background-color: #fff;
+    --logo-color: #555;
+    --logo-dot-color: #bbb;
+    --link-color: #777;
+    --link-focus-color: #555;
   }
 }
 

@@ -1,0 +1,10 @@
+.logo {
+  margin: 0;
+  color: var(--logo-color);
+  font-size: 3em;
+  font-weight: normal;
+
+  > span {
+    color: var(--logo-dot-color);
+  }
+}

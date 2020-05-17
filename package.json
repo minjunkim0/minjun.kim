@@ -1,9 +1,32 @@
 {
   "private": true,
+  "name": "minjun-kim",
   "scripts": {
-    "start": "serve public"
+    "dev": "next"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "dotenv": "^8.2.0",
+    "next": "^9.4.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "sass": "^1.26.5"
   },
   "devDependencies": {
-    "serve": "^11.1.0"
+    "@types/classnames": "^2.2.10",
+    "@types/node": "^14.0.1",
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
+    "@typescript-eslint/eslint-plugin": "^2.31.0",
+    "@typescript-eslint/parser": "^2.31.0",
+    "eslint": "^7.0.0",
+    "eslint-config-standard-with-typescript": "^16.0.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "typescript": "^3.9.2"
   }
 }

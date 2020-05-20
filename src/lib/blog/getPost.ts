@@ -9,8 +9,10 @@ export async function getPost ({ slug }) {
   const query = /* GraphQL */ `
     query GET_POST($slug: ID!) {
       post(id: $slug, idType: SLUG) {
+        id
         title
         content
+        slug
       }
     }
   `;

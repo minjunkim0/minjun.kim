@@ -3,7 +3,9 @@ import type { BlogPost } from './types';
 
 type SlugResponse = {
   posts: {
-    edges: BlogPost[];
+    edges: Array<{
+      node: BlogPost;
+    }>;
   };
 };
 
@@ -21,5 +23,5 @@ export async function getSlugPaths (prefix: string) {
   `;
 
   const data = await request<SlugResponse>(query, {});
-  return data.posts.edges.map((post) => `${prefix}/${post.slug}`);
+  return data.posts.edges.map((post) => `${prefix}/${post.node.slug}`);
 }

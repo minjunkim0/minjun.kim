@@ -4,8 +4,9 @@ import Layout from 'containers/Layout';
 import BlogPost from 'containers/BlogPost';
 import { getSlugPaths, getPost } from 'lib/blog';
 import type { BlogPost as BlogPostProps } from 'lib/blog';
+import { GetStaticProps, GetStaticPaths } from 'next';
 
-const BlogPostPage = ({ title, content }: BlogPostProps) => {
+const BlogPostPage = ({ id, title, content }: BlogPostProps) => {
   return (
     <Layout>
       <BlogPost
@@ -16,19 +17,21 @@ const BlogPostPage = ({ title, content }: BlogPostProps) => {
   );
 };
 
-export async function getStaticPaths () {
+export const getStaticPaths: GetStaticPaths = async () => {
   const paths = await getSlugPaths('/blog');
   return {
     paths,
     fallback: true,
   };
-}
+};
 
-export async function getStaticProps ({ params }) {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const post = await getPost({ slug: params.slug });
   return {
-    props: post,
+    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+    props: post || {},
+    // unstable_revalidate: true,
   };
-}
+};
 
 export default BlogPostPage;

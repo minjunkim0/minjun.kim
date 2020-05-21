@@ -1,10 +1,10 @@
 import React from 'react';
+import { GetStaticProps, GetStaticPaths } from 'next';
 
 import Layout from 'containers/Layout';
 import BlogPost from 'containers/BlogPost';
 import { getSlugPaths, getPost } from 'lib/blog';
 import type { BlogPost as BlogPostProps } from 'lib/blog';
-import { GetStaticProps, GetStaticPaths } from 'next';
 
 const BlogPostPage = ({ id, title, content }: BlogPostProps) => {
   return (

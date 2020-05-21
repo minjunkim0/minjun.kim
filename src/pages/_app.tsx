@@ -2,8 +2,8 @@ import React from 'react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 
-import './_app.css';
 import 'prismjs/themes/prism-dark.css';
+import './_app.css';
 
 const App = ({ Component, pageProps }: AppProps) => (
   <>

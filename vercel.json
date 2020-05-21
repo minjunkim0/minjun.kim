@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/cms/(.*)",
+      "destination": "https://cms.minjun.dev/$1"
+    }
+  ]
+}

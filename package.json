@@ -19,8 +19,7 @@
     "rehype-minify-whitespace": "^4.0.1",
     "rehype-react": "^5.0.1",
     "sass": "^1.26.5",
-    "swr": "^0.2.0",
-    "universal-cookie": "^4.0.3"
+    "swr": "^0.2.0"
   },
   "devDependencies": {
     "@types/cheerio": "^0.22.18",

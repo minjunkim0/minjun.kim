@@ -1,5 +1,4 @@
 import React, { useCallback } from 'react';
-import Cookies from 'universal-cookie';
 
 import AdjustIcon from 'components/icons/AdjustIcon';
 import GithubIcon from 'components/icons/GithubIcon';
@@ -8,23 +7,26 @@ import Logo from 'components/Logo';
 
 import styles from './Header.module.scss';
 
-const cookies = new Cookies();
+function switchTheme () {
+  if (typeof document === 'undefined') {
+    return;
+  }
+
+  const html = document.documentElement;
+  const theme = html.getAttribute('data-theme');
+  const setTheme = theme === 'light' ? '' : 'light';
+
+  // setAttribute
+  html.setAttribute('data-theme', setTheme);
+
+  // setLocalStorage
+  try {
+    localStorage.setItem('theme', setTheme);
+  } catch (err) {}
+}
 
 export const Header = () => {
-  const handleSwitchTheme = useCallback(() => {
-    if (typeof document === 'undefined') {
-      return;
-    }
-
-    const html = document.documentElement;
-    const theme = html.getAttribute('data-theme');
-    const switchTheme = theme === 'light' ? 'dark' : 'light';
-    html.setAttribute('data-theme', switchTheme);
-
-    const expires = new Date();
-    expires.setDate(120);
-    cookies.set('_theme', switchTheme, { expires, path: '/' });
-  }, []);
+  const handleSwitchTheme = useCallback(switchTheme, []);
 
   return (
     <header>

@@ -21,7 +21,7 @@ class MyDocument extends Document<Props> {
     const cookies = this.props.cookies;
     const theme = cookies.get('_theme');
     return (
-      <Html data-theme={theme}>
+      <Html lang="ko" data-theme={theme}>
         <GoogleTagManager containerId={gtmContainerId} />
         <Head />
         <body>

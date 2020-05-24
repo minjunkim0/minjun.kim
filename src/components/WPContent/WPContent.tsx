@@ -1,12 +1,14 @@
 import React from 'react';
 import rehype from 'rehype';
 import rehype2react from 'rehype-react';
+import minifyWhitespace from 'rehype-minify-whitespace';
 import CodeBlock from '../CodeBlock';
 
 import styles from './WPContent.module.scss';
 
 const processor = rehype()
   .data('settings', { fragment: true })
+  .use(minifyWhitespace)
   .use(rehype2react, {
     createElement: React.createElement,
     components: {

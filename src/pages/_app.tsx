@@ -1,26 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import Cookies from 'universal-cookie';
 
 import './_app.scss';
 
-type Props = AppProps & {
-  cookies: Cookies;
-};
-
-const App = ({ Component, pageProps }: Props) => {
-  useEffect(() => {
-    const cookies = new Cookies();
-    const theme = cookies.get('_theme');
-    if (typeof document !== 'undefined' && typeof theme !== 'undefined') {
-      document.documentElement.setAttribute('data-theme', theme);
-    } else if (typeof window !== 'undefined') {
-      const darkMode = window.matchMedia('(prefers-color-scheme: dark)');
-      document.documentElement.setAttribute('data-theme', darkMode.matches ? 'dark' : 'light');
-    }
-  }, []);
-
+const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>

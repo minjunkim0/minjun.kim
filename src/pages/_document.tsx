@@ -1,29 +1,45 @@
 import React from 'react';
-import Cookies from 'universal-cookie';
-import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 import GoogleTagManager, { GoogleTagManagerNoScript } from 'components/GoogleTagManager';
 
 const gtmContainerId: string = process.env.NEXT_PUBLIC_GTM_CONTAINER_ID;
 
-export type Props = {
-  cookies: Cookies;
-};
+const storageKey = 'theme';
+const noFlash = `(function() {
+function setDataThemeAttribute(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+}
 
-class MyDocument extends Document<Props> {
-  static async getInitialProps (ctx: DocumentContext) {
-    const cookies = new Cookies(ctx.req?.headers?.cookie);
-    const initialProps = await Document.getInitialProps(ctx);
-    return { ...initialProps, cookies };
-  }
+function getPreferredTheme() {
+  var theme = null;
+  try {
+    theme = localStorage.getItem('${storageKey}');
+  } catch (err) {}
+  return theme;
+}
+
+var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+var preferredTheme = getPreferredTheme();
+if (preferredTheme !== null) {
+  setDataThemeAttribute(preferredTheme);
+} else if (darkQuery.matches) {
+  setDataThemeAttribute('dark');
+}
+})();`.replace(/(\s{2}|\n)/g, '');
+
+class MyDocument extends Document {
+  // static async getInitialProps (ctx: DocumentContext) {
+  //   const initialProps = await Document.getInitialProps(ctx);
+  //   return { ...initialProps };
+  // }
 
   render () {
-    const cookies = this.props.cookies;
-    const theme = cookies.get('_theme');
     return (
-      <Html lang="ko" data-theme={theme}>
+      <Html lang="ko">
         <GoogleTagManager containerId={gtmContainerId} />
         <Head />
+        <script dangerouslySetInnerHTML={{ __html: noFlash }} />
         <body>
           <Main />
           <NextScript />

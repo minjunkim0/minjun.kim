@@ -1,27 +1,25 @@
+import moment from 'moment';
 import { request } from 'lib/graphql';
-import type { BlogPost } from './types';
+import type { BlogSlugs } from './types';
 
 type SlugResponse = {
   posts: {
-    edges: Array<{
-      node: BlogPost;
-    }>;
+    nodes: BlogSlugs[];
   };
 };
 
-export async function getSlugPaths (prefix: string) {
-  const query = /* GraphQL */ `
-    query GET_POSTS {
-      posts {
-        edges {
-          node {
-            slug
-          }
-        }
+const query = /* GraphQL */ `
+  query GET_SLUGS {
+    posts {
+      nodes {
+        slug
+        date
       }
     }
-  `;
+  }
+`;
 
+export async function getSlugPaths (prefix: string) {
   const data = await request<SlugResponse>(query, {});
-  return data.posts.edges.map((post) => `${prefix}/${post.node.slug}`);
+  return data.posts.nodes.map((post) => `${prefix}/${moment(post.date).format('YYYY/MM/DD')}/${post.slug}`);
 }

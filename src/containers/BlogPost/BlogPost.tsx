@@ -1,27 +1,22 @@
 import React from 'react';
-import cx from 'classnames';
 
+import { BlogPost as BlogPostType } from 'lib/blog';
 import Wrapper from 'components/Wrapper';
-import WPContent from 'components/WPContent';
+import BlogArticle from 'components/BlogArticle';
 
-import styles from './BlogPost.module.scss';
-
-export type Props = {
-  title: string;
-  content: string;
+export type Props = BlogPostType & {
   className?: string;
 };
 
-export const BlogPost = ({ title, content, className }: Props) => {
+export const BlogPost = ({ title, content, date }: Props) => {
   return (
-    <div className={cx(styles.container, className)}>
-      <Wrapper>
-        <article className={styles.article}>
-          <h1 className={styles.title}>{title}</h1>
-          <WPContent value={content} />
-        </article>
-      </Wrapper>
-    </div>
+    <Wrapper>
+      <BlogArticle
+        title={title}
+        content={content}
+        date={date}
+      />
+    </Wrapper>
   );
 };
 

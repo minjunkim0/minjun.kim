@@ -1,55 +1,42 @@
-$margin: 16px;
+@import '../../styles/mixins.scss';
 
 .content {
-  code {
-    font-family: var(--font-family-code);
-    background: rgba(#000, 0.35);
-    padding: 0.1em 0.3em;
-    border-radius: 0.5em;
-  }
-
   :global(.wp-block-code) {
     position: relative;
-    background: rgba(#000, 0.35);
-    margin-left: -($margin);
-    margin-right: -($margin);
+    background: #1a1f28;
+    margin-left: calc(-1 * var(--page-margin));
+    margin-right: calc(-1 * var(--page-margin));
     border-radius: 0;
     transition-property: border-radius;
     transition-duration: var(--transituin-duration);
 
-    @media screen and (min-width: 800px) {
+    @include breakpoint-large {
       border-radius: 5px;
-    }
-
-    > code {
-      display: block;
-      padding: $margin;
-      border-radius: 0;
-      font-size: 0.8em;
-      background: none;
-      overflow-x: auto;
     }
 
     &[title]::before {
       display: block;
-      padding-left: $margin;
-      padding-right: $margin;
-      background: rgba(#000, 0.1);
-      margin-bottom: 1em;
+      padding-left: var(--page-margin);
+      padding-right: var(--page-margin);
+      font-family: var(--font-family-base);
+      font-size: 0.8em;
+      font-weight: bold;
       content: attr(title);
     }
+  }
 
-    &[data-lang]::after {
-      content: attr(data-lang);
-      position: absolute;
-      right: 0;
-      top: 0;
-      text-transform: uppercase;
-      padding: 0.5em;
-      line-height: 1;
-      font-size: 0.5em;
-      opacity: 0.4;
-      font-family: var(--font-family-code);
+  :global(.wp-block-image) {
+    margin-left: calc(-1 * var(--page-margin));
+    margin-right: calc(-1 * var(--page-margin));
+
+    > img {
+      width: 100%;
     }
+  }
+
+  :global(.wp-block-quote) {
+    margin: 1em 0;
+    padding-left: 1em;
+    border-left: 4px solid var(--text-secondary-color);
   }
 }

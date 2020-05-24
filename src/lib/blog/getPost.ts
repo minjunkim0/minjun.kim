@@ -5,18 +5,20 @@ export type BlogPostResponse = {
   post: BlogPost;
 };
 
-export async function getPost ({ slug }) {
-  const query = /* GraphQL */ `
-    query GET_POST($slug: ID!) {
-      post(id: $slug, idType: SLUG) {
-        id
-        title
-        content
-        slug
-      }
+const query = /* GraphQL */ `
+  query GET_POST($slug: ID!) {
+    post(id: $slug, idType: SLUG) {
+      id
+      title
+      content
+      excerpt
+      slug
+      date
     }
-  `;
+  }
+`;
 
+export async function getPost ({ slug }) {
   const { post } = await request<BlogPostResponse>(query, { slug });
   return post;
 }

@@ -2,5 +2,36 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 50px;
+}
+
+.logo,
+.mode {
+  color: var(--text-secondary-color);
+  transition-duration: var(--transituin-duration);
+  transition-property: color;
+
+  @media (hover: hover) {
+    &:hover {
+      color: var(--text-color);
+    }
+  }
+}
+
+.logo {
+  font-size: 2em;
+}
+
+.mode {
+  border: 0;
+  background: none;
+  padding: 10px;
+  cursor: pointer;
+  outline: none;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
 }

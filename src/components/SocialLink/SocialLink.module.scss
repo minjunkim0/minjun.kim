@@ -24,20 +24,21 @@
 
   span,
   li:after {
-    color: var(--link-sep-color);
+    color: var(--text-secondary-color);
+    opacity: 0.5;
   }
 
   a {
     &:link,
     &:visited {
-      color: var(--link-color);
+      color: var(--text-secondary-color);
       text-decoration: none;
       transition: color .3s;
     }
 
     &:hover,
     &:focus{
-      color: var(--link-focus-color);
+      color: var(--text-color);
     }
 
     &:active {

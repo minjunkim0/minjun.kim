@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/wp-content/(.*)",
+      "destination": "https://cms.minjun.dev/wp-content/$1"
+    }
+  ]
+}

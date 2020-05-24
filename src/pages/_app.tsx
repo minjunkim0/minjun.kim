@@ -15,6 +15,9 @@ const App = ({ Component, pageProps }: Props) => {
     const theme = cookies.get('_theme');
     if (typeof document !== 'undefined' && typeof theme !== 'undefined') {
       document.documentElement.setAttribute('data-theme', theme);
+    } else if (typeof window !== 'undefined') {
+      const darkMode = window.matchMedia('(prefers-color-scheme: dark)');
+      document.documentElement.setAttribute('data-theme', darkMode.matches ? 'dark' : 'light');
     }
   }, []);
 

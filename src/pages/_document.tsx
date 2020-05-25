@@ -19,12 +19,12 @@ function getPreferredTheme() {
   return theme;
 }
 
-var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+var lightQuery = window.matchMedia('(prefers-color-scheme: light)');
 var preferredTheme = getPreferredTheme();
 if (preferredTheme !== null) {
   setDataThemeAttribute(preferredTheme);
-} else if (darkQuery.matches) {
-  setDataThemeAttribute('dark');
+} else if (lightQuery.matches) {
+  setDataThemeAttribute('light');
 }
 })();`.replace(/(\s{2}|\n)/g, '');
 

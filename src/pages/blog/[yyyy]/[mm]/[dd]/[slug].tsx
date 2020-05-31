@@ -18,13 +18,24 @@ const BlogPostPage = ({ post }: Props) => {
   }
 
   const { as: canonical } = getBlogPath({ date: post.date, slug: post.slug });
+  const postCanonical = `https://minjun.kim${canonical}`;
+  const postExcerpt = post.excerpt.replace(/(<([^>]+)>)|\n|\[&hellip;\]/ig, '');
   return (
     <Layout>
       {typeof post !== 'undefined' ? (
         <Head>
           <title>{post.title}</title>
-          <link rel="canonical" href={`https://minjun.kim${canonical}`} />
+          <link rel="canonical" href={postCanonical} />
           <meta property="og:type" content="article" />
+          <meta property="og:locale" content="ko_KR" />
+          <meta property="og:site_name" content="minjun.kim" />
+          <meta property="og:url" content={postCanonical} />
+          <meta property="og:title" content={post.title} />
+          <meta property="og:description" content={postExcerpt} />
+          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:url" content={postCanonical} />
+          <meta name="twitter:title" content={post.title} />
+          <meta name="twitter:description" content={postExcerpt} />
         </Head>
       ) : null}
       <BlogPost {...post} />

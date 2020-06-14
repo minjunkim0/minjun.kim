@@ -7,6 +7,7 @@ import './_app.scss';
 
 const App = ({ Component, pageProps, router }: AppProps) => {
   const canonical = getCanonical(router.asPath);
+  const ogImage = getCanonical('/og.png');
   const title = 'minjun.kim';
   return (
     <>
@@ -25,13 +26,13 @@ const App = ({ Component, pageProps, router }: AppProps) => {
         <meta property="og:site_name" content={title} />
         <meta property="og:url" content={canonical} key="og-url" />
         <meta property="og:title" content={title} key="og-title" />
-        <meta property="og:image" content="/og.png" key="og-image" />
+        <meta property="og:image" content={ogImage} key="og-image" />
         <meta property="og:image:width" content="1200" key="og-image-width" />
         <meta property="og:image:height" content="630" key="og-image-height" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:url" content={canonical} key="twitter-url" />
         <meta name="twitter:title" content={title} key="twitter-title" />
-        <meta name="twitter:image" content="/og.png" key="twitter-image" />
+        <meta name="twitter:image" content={ogImage} key="twitter-image" />
       </Head>
       <Component {...pageProps} />
     </>

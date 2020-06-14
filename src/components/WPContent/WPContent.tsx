@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import rehype from 'rehype';
 import rehype2react from 'rehype-react';
 import minifyWhitespace from 'rehype-minify-whitespace';
@@ -21,9 +22,9 @@ export type Props = {
   className?: string;
 };
 
-export const WPContent = ({ value }: Props) => {
+export const WPContent = ({ value, className }: Props) => {
   return (
-    <div className={styles.content}>
+    <div className={cx(styles.content, className)}>
       {processor.processSync(value).result}
     </div>
   );

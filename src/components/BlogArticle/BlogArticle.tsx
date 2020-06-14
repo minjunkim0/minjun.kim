@@ -18,7 +18,10 @@ export const BlogArticle = ({ title, date, content }: Props) => {
         title={title}
         date={date}
       />
-      <WPContent value={content} />
+      <WPContent
+        value={content}
+        className={styles.content}
+      />
     </article>
   );
 };

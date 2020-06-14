@@ -1,6 +1,7 @@
 {
   "private": true,
   "name": "minjun-kim",
+  "homepage": "https://minjun.kim",
   "scripts": {
     "dev": "next"
   },

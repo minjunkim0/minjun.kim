@@ -5,6 +5,13 @@ export type BlogPost = Readonly<{
   excerpt: string;
   content: string;
   date: string;
+  author: {
+    name: string;
+    description: string;
+    avatar: {
+      url: string;
+    };
+  };
 }>;
 
 export type BlogPosts = Omit<BlogPost, 'content'>;

@@ -14,6 +14,13 @@ const query = /* GraphQL */ `
       excerpt
       slug
       date
+      author {
+        name
+        description
+        avatar {
+          url
+        }
+      }
     }
   }
 `;

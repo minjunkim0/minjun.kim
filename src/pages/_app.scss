@@ -21,8 +21,9 @@
 
 @include light-mode {
   --background-color: #fff;
-  --primary-color: #58b4ae;
-  --text-color: #111;
+  --primary-color: #37ada0;
+  --text-color: #333;
+  --text-secondary-color: #838383;
   --code-highlight-color: #{rgba(#000, 0.05)};
 }
 

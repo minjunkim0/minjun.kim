@@ -4,7 +4,8 @@ export type Variables = {
   [key: string]: any;
 };
 
-const endpoint = 'https://cms.minjun.dev/graphql';
+// Wordpress Endpoint
+const endpoint = new URL('/graphql', process.env.WORDPRESS_API_URL).toString();
 
 // eslint-disable-next-line @typescript-eslint/promise-function-async
 export function request<T = any> (query: string, variables?: Variables) {

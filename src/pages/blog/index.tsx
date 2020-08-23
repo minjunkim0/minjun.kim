@@ -26,7 +26,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       posts,
     },
-    unstable_revalidate: true,
+    revalidate: true,
   };
 };
 

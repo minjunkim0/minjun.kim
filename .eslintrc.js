@@ -23,6 +23,7 @@ module.exports = {
     node: true,
   },
   rules: {
+    '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     'comma-dangle': ['error', 'always-multiline'],
 
@@ -42,10 +43,14 @@ module.exports = {
   },
   overrides: [
     {
-      files: '*.d.ts',
+      files: ['*.d.ts'],
       rules: {
         '@typescript-eslint/triple-slash-reference': 'off',
       },
     },
+  ],
+  ignorePatterns: [
+    '.next',
+    'node_modules',
   ],
 };

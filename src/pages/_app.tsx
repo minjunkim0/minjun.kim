@@ -3,7 +3,32 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import getCanonical from 'lib/getCanonical';
 
+import * as Sentry from '@sentry/node';
+import { Integrations } from '@sentry/apm';
+import { RewriteFrames } from '@sentry/integrations';
+import getConfig from 'next/config';
+
 import './_app.scss';
+
+if (process.env.NEXT_PUBLIC_SENTRY_DSN) {
+  const config = getConfig();
+  // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+  const distDir = `${config.serverRuntimeConfig.rootDir}/.next`;
+  Sentry.init({
+    enabled: process.env.NODE_ENV === 'production',
+    integrations: [
+      new RewriteFrames({
+        iteratee: (frame) => {
+          frame.filename = frame.filename.replace(distDir, 'app:///_next');
+          return frame;
+        },
+      }),
+      new Integrations.Tracing(),
+    ],
+    tracesSampleRate: 1.0,
+    dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
+  });
+}
 
 const App = ({ Component, pageProps, router }: AppProps) => {
   const canonical = getCanonical(router.asPath);

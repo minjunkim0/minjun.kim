@@ -25,7 +25,7 @@ const query = /* GraphQL */ `
   }
 `;
 
-export async function getPost ({ slug }) {
+export async function getPost({ slug }) {
   const { post } = await request<BlogPostResponse>(query, { slug });
   return post;
 }

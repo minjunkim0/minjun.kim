@@ -8,7 +8,7 @@ export type Variables = {
 const endpoint = new URL('/graphql', process.env.WORDPRESS_API_URL).toString();
 
 // eslint-disable-next-line @typescript-eslint/promise-function-async
-export function request<T = any> (query: string, variables?: Variables) {
+export function request<T = any>(query: string, variables?: Variables) {
   const graphQLClient = new GraphQLClient(endpoint, {
     credentials: 'include',
     mode: 'cors',

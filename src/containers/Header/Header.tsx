@@ -7,7 +7,7 @@ import Logo from 'components/Logo';
 
 import styles from './Header.module.scss';
 
-function switchTheme () {
+function switchTheme() {
   if (typeof document === 'undefined') {
     return;
   }

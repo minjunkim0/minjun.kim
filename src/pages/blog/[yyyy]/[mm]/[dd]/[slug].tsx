@@ -46,7 +46,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = await getSlugPaths('/blog');
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
 };
 

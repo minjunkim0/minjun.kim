@@ -34,7 +34,7 @@ class MyDocument extends Document {
   //   return { ...initialProps };
   // }
 
-  render () {
+  render() {
     return (
       <Html lang="ko">
         <GoogleTagManager containerId={gtmContainerId} />

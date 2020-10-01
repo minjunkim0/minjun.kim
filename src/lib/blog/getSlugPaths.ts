@@ -19,7 +19,7 @@ const query = /* GraphQL */ `
   }
 `;
 
-export async function getSlugPaths (prefix: string) {
+export async function getSlugPaths(prefix: string) {
   const data = await request<SlugResponse>(query, {});
   return data.posts.nodes.map((post) => `${prefix}/${moment(post.date).format('YYYY/MM/DD')}/${post.slug}`);
 }

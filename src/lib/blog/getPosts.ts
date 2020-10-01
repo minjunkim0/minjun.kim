@@ -21,7 +21,7 @@ const query = /* GraphQL */ `
   }
 `;
 
-export async function getPosts () {
+export async function getPosts() {
   const data = await request<BlogPostsResponse>(query);
   return data.posts.nodes;
 }

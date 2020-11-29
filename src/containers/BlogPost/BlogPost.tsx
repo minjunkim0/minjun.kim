@@ -11,7 +11,7 @@ export type Props = BlogPostType & {
   className?: string;
 };
 
-export const BlogPost = ({ title, content, date, author }: Props) => {
+export const BlogPost = ({ title, content, date, author: { node: author } }: Props) => {
   return (
     <Wrapper className={styles.post}>
       <BlogArticle

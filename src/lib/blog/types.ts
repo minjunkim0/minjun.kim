@@ -6,10 +6,12 @@ export type BlogPost = Readonly<{
   content: string;
   date: string;
   author: {
-    name: string;
-    description: string;
-    avatar: {
-      url: string;
+    node: {
+      name: string;
+      description: string;
+      avatar: {
+        url: string;
+      };
     };
   };
 }>;

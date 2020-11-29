@@ -15,10 +15,12 @@ const query = /* GraphQL */ `
       slug
       date
       author {
-        name
-        description
-        avatar {
-          url
+        node {
+          name
+          description
+          avatar {
+            url
+          }
         }
       }
     }

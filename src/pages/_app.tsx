@@ -58,6 +58,9 @@ const App = ({ Component, pageProps, router }: AppProps) => {
         <meta name="twitter:url" content={canonical} key="twitter-url" />
         <meta name="twitter:title" content={title} key="twitter-title" />
         <meta name="twitter:image" content={ogImage} key="twitter-image" />
+        {process.env.NEXT_PUBLIC_NAVER_SITE_VERIFICATION && (
+          <meta name="naver-site-verification" content={process.env.NEXT_PUBLIC_NAVER_SITE_VERIFICATION} />
+        )}
       </Head>
       <Component {...pageProps} />
     </>

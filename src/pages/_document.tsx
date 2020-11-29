@@ -37,12 +37,10 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="ko">
-        <GoogleTagManager containerId={gtmContainerId} />
-        {process.env.NEXT_PUBLIC_NAVER_SITE_VERIFICATION && (
-          <meta name="naver-site-verification" content={process.env.NEXT_PUBLIC_NAVER_SITE_VERIFICATION} />
-        )}
-        <Head />
-        <script dangerouslySetInnerHTML={{ __html: noFlash }} />
+        <Head>
+          <script dangerouslySetInnerHTML={{ __html: noFlash }} />
+          <GoogleTagManager containerId={gtmContainerId} />
+        </Head>
         <body>
           <Main />
           <NextScript />

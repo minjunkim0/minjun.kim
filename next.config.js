@@ -30,6 +30,15 @@ module.exports = withSourceMaps({
   env: {
     HOMEPAGE: homepage,
   },
+  redirects: async () => {
+    return [
+      {
+        source: '/',
+        destination: '/blog',
+        permanent: true,
+      },
+    ];
+  },
   webpack: (config, options) => {
     if (!options.isServer) {
       config.resolve.alias['@sentry/node'] = '@sentry/browser';

@@ -9,15 +9,11 @@ import BlogPost from 'containers/BlogPost';
 import { getSlugPaths, getPost } from 'lib/blog';
 import type { BlogPost as BlogPostType } from 'lib/blog';
 
-export type Props = {
+export interface Props {
   post: BlogPostType;
 };
 
-const BlogPostPage = ({ post }: Props) => {
-  if (typeof post === 'undefined') {
-    return null;
-  }
-
+export default function BlogPostPage({ post }: Props) {
   const { as: canonical } = getBlogPath({ date: post.date, slug: post.slug });
   const postExcerpt = post.excerpt.replace(/(<([^>]+)>)|\n|\[&hellip;\]/ig, '');
   const postCanonical = getCanonical(canonical);
@@ -40,7 +36,7 @@ const BlogPostPage = ({ post }: Props) => {
       <BlogPost {...post} />
     </Layout>
   );
-};
+}
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = await getSlugPaths('/blog');
@@ -51,13 +47,18 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const post = await getPost({ slug: params.slug });
+  const slug = ['', 'blog'].concat(params.slug).join('/');
+  const post = await getPost({ slug });
+
+  if (!post) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
       post,
     },
-    revalidate: true,
   };
 };
-
-export default BlogPostPage;

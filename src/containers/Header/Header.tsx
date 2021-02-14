@@ -1,9 +1,13 @@
 import React, { useCallback } from 'react';
+import Link from 'next/link';
 
 import AdjustIcon from 'components/icons/AdjustIcon';
 import GithubIcon from 'components/icons/GithubIcon';
+import InstagramIcon from 'components/icons/InstagramIcon';
+import LinkedinIcon from 'components/icons/LinkedinIcon';
 import Wrapper from 'components/Wrapper';
-import Logo from 'components/Logo';
+import Symbol from 'components/UnderfrontSymbol';
+import TopHeading from 'components/TopHeading';
 
 import styles from './Header.module.scss';
 
@@ -31,7 +35,11 @@ export const Header = () => {
   return (
     <header>
       <Wrapper className={styles.container}>
-        <Logo link className={styles.logo} />
+        <TopHeading>
+          <Link href="/blog">
+            <a><Symbol height="30" className={styles.logo} /></a>
+          </Link>
+        </TopHeading>
         <div className={styles.utils}>
           <button
             type="button"
@@ -40,6 +48,22 @@ export const Header = () => {
           >
             <AdjustIcon className={styles.icon} />
           </button>
+          <a
+            href="https://www.linkedin.com/in/minjunk"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className={styles.mode}
+          >
+            <LinkedinIcon className={styles.icon} />
+          </a>
+          <a
+            href="https://instagram.com/3600s"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className={styles.mode}
+          >
+            <InstagramIcon className={styles.icon} />
+          </a>
           <a
             href="https://github.com/minjunk"
             target="_blank"

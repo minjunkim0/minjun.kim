@@ -1,7 +1,8 @@
 import React from 'react';
 import { NextPage } from 'next';
 
-import Logo from 'components/Logo';
+import Logo from 'components/UnderfrontLogo';
+import TopHeading from 'components/TopHeading';
 import SocialLink from 'components/SocialLink';
 
 import styles from './index.module.scss';
@@ -9,7 +10,9 @@ import styles from './index.module.scss';
 const IndexPage: NextPage = () => {
   return (
     <>
-      <Logo className={styles.margin} />
+      <TopHeading className={styles.margin}>
+        <Logo width="100" />
+      </TopHeading>
       <SocialLink className={styles.margin} />
     </>
   );

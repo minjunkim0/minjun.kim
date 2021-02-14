@@ -6,7 +6,7 @@
 
 :root {
   --background-color: #21262e;
-  --primary-color: #4ecdc4;
+  --primary-color: #21cfff;
   --secondary-color: #413396;
   --text-color: #f7fff7;
   --text-secondary-color: #b0b6b6;
@@ -17,14 +17,18 @@
   --transituin-duration: 0;
   --page-margin: 16px;
   --page-max-width: 700px;
+  --logo-color: #b8b8b8;
+  --logo-text-color: #000;
 }
 
 @include light-mode {
   --background-color: #fff;
-  --primary-color: #37ada0;
+  --primary-color: #008aff;
   --text-color: #333;
   --text-secondary-color: #838383;
   --code-highlight-color: #{rgba(#000, 0.05)};
+  --logo-color: #231f20;
+  --logo-text-color: #fff;
 }
 
 html[data-theme] {

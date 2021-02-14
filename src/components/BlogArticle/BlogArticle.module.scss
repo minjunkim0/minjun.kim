@@ -21,6 +21,8 @@
   }
 
   a {
+    word-break: break-all;
+
     &:link,
     &:visited {
       text-decoration: none;

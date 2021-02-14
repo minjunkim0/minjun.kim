@@ -5,7 +5,7 @@ export type Variables = {
 };
 
 // Wordpress Endpoint
-const endpoint = new URL('/graphql', process.env.WORDPRESS_API_URL).toString();
+const endpoint = process.env.WORDPRESS_GRAPHQL_ENDPOINT;
 
 // eslint-disable-next-line @typescript-eslint/promise-function-async
 export function request<T = any>(query: string, variables?: Variables) {

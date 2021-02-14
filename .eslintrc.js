@@ -45,6 +45,9 @@ module.exports = {
       named: 'never',
       asyncArrow: 'always',
     }],
+
+    // react@17
+    'react/react-in-jsx-scope': 'off',
   },
   overrides: [
     {

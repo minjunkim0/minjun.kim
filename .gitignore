@@ -6,3 +6,12 @@ node_modules
 .env.*.local
 *-debug.log
 *-error.log
+
+# Yarn Zero-installs
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

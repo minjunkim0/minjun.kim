@@ -12,7 +12,7 @@ import './_app.scss';
 
 if (process.env.NEXT_PUBLIC_SENTRY_DSN) {
   const config = getConfig();
-  // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+  // eslint-disable-next-line @typescript-eslint/restrict-template-express ions
   const distDir = `${config.serverRuntimeConfig.rootDir}/.next`;
   Sentry.init({
     enabled: process.env.NODE_ENV === 'production',

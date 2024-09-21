@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import moment from 'moment';
 import Link from 'next/link';
-import { defaultBlogPath } from 'lib/getBlogPath';
+import { defaultBlogPath } from '@/lib/getBlogPath';
 
 import styles from './BlogHeader.module.scss';
 

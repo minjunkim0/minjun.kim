@@ -14,14 +14,14 @@ export type Props = {
 export const BlogArticle = ({ title, date, content }: Props) => {
   return (
     <article className={styles.article}>
-      <BlogHeader
+      {/* <BlogHeader
         title={title}
         date={date}
-      />
-      <WPContent
+      /> */}
+      {/* <WPContent
         value={content}
         className={styles.content}
-      />
+      /> */}
     </article>
   );
 };

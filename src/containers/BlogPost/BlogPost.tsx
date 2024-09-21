@@ -1,17 +1,17 @@
 import React from 'react';
 
-import { BlogPost as BlogPostType } from 'lib/blog';
-import Wrapper from 'components/Wrapper';
-import BlogArticle from 'components/BlogArticle';
-import BlogAuthor from 'components/BlogAuthor';
+import type { Post } from '@/types/post';
+import Wrapper from '@/components/Wrapper';
+import BlogArticle from '@/components/BlogArticle';
+import BlogAuthor from '@/components/BlogAuthor';
 
 import styles from './BlogPost.module.scss';
 
-export type Props = BlogPostType & {
+export type Props = Post & {
   className?: string;
 };
 
-export const BlogPost = ({ title, content, date, author: { node: author } }: Props) => {
+export const BlogPost = ({ title, content, date, author }: Props) => {
   return (
     <Wrapper className={styles.post}>
       <BlogArticle
@@ -19,11 +19,11 @@ export const BlogPost = ({ title, content, date, author: { node: author } }: Pro
         content={content}
         date={date}
       />
-      <BlogAuthor
+      {/* <BlogAuthor
         name={author.name}
         description={author.description}
         avatar={author.avatar.url}
-      />
+      /> */}
     </Wrapper>
   );
 };

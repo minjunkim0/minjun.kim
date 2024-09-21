@@ -1,4 +1,4 @@
-import { dateFormat } from 'lib/utils/date';
+import { dateFormat } from '@/lib/utils/date';
 
 export type GetBlogPathArgs = {
   date: string;

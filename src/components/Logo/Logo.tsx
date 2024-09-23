@@ -2,16 +2,19 @@ import React from 'react';
 import Link from 'next/link';
 
 import TopHeading from '@/components/TopHeading';
-import type{ Props as TopHeadingProps} from '@/components/TopHeading';
 
-export type Props =  TopHeadingProps;
+type Props = {
+  className?: string;
+  link?: boolean;
+};
 
-const Logo = (props: Props) => {
+const Logo = ({className, link}: Props) => {
+  const title = <>minjun<span>.</span>kim</>;
   return (
-    <TopHeading {...props}>
-      <Link href="/">
-        minjun<span>.</span>kim
-      </Link>
+    <TopHeading className={className}>
+      {link ? (
+        <Link href="/">{title}</Link>
+      ) : title}
     </TopHeading>
   );
 };

@@ -6,13 +6,14 @@ import { defaultBlogPath } from '@/lib/getBlogPath';
 import styles from './BlogHeader.module.scss';
 
 export type Props = {
-  slug?: string;
+  url?: string;
   title: string;
   date: string;
   className?: string;
+  source?: string;
 };
 
-export const BlogHeader = ({ title, date, slug }: Props) => {
+export const BlogHeader = ({ title, date, url, source }: Props) => {
   const created = useMemo(
     () => moment(date).format('YYYY/MM/DD'),
     [date],
@@ -20,12 +21,10 @@ export const BlogHeader = ({ title, date, slug }: Props) => {
   return (
     <div className={styles.header}>
       <div className={styles.title}>
-        {typeof slug !== 'undefined' ? (
+        {url ? (
           <h1>
-            <Link href={defaultBlogPath} as={`/blog/${created}/${slug}`}>
-              <a>
+            <Link href={url}>
                 {title}
-              </a>
             </Link>
           </h1>
         ) : (
@@ -34,6 +33,7 @@ export const BlogHeader = ({ title, date, slug }: Props) => {
       </div>
       <div className={styles.info}>
         <span>{created}</span>
+        {source ? <> • <span>{source}</span></> : null}
       </div>
     </div>
   );

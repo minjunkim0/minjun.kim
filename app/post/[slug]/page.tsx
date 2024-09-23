@@ -5,24 +5,24 @@ import { notFound } from "next/navigation";
 
 type Props = {
   params: {
-    slug: string[];
+    slug: string;
   };
 };
 
 export default function ArticlePage({ params }: Props) {
   const post = getPostBySlug(params.slug);
-  console.log(post);
+  // console.log(post);
   // if (post) {
   //   return <BlogPost {...post} />;
   // }
 
 
-  // return <BlogPost />;
+  return <BlogPost {...post} />;
   return null;
 }
 
 export function generateMetadata({ params }: Props): Metadata {
-  const post = getPostBySlug(params.slug.join('/'));
+  const post = getPostBySlug(params.slug);
 
   if (!post) {
     return notFound();

@@ -3,6 +3,7 @@ import BlogHeader from '../BlogHeader';
 import WPContent from '../WPContent';
 
 import styles from './BlogArticle.module.scss';
+import BlogContent from '../BlogContent';
 
 export type Props = {
   className?: string;
@@ -14,14 +15,15 @@ export type Props = {
 export const BlogArticle = ({ title, date, content }: Props) => {
   return (
     <article className={styles.article}>
-      {/* <BlogHeader
+      <BlogHeader
         title={title}
         date={date}
-      /> */}
+      />
       {/* <WPContent
         value={content}
         className={styles.content}
       /> */}
+      <BlogContent value={content} className={styles.content} />
     </article>
   );
 };

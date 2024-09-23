@@ -8,20 +8,22 @@ import styles from './BlogExcerpt.module.scss';
 export type Props = {
   title: string;
   date: string;
-  excerpt: string;
-  slug: string;
+  excerpt?: string;
+  url?: string;
+  source?: string;
   className?: string;
 };
 
-export const BlogExcerpt = ({ title, date, excerpt, slug, className }: Props) => {
+export const BlogExcerpt = ({ title, date, excerpt, url, source, className }: Props) => {
   return (
     <div className={cx(styles.excerpt, className)}>
       <BlogHeader
         title={title}
         date={date}
-        slug={slug}
+        url={url}
+        source={source}
       />
-      <div dangerouslySetInnerHTML={{ __html: excerpt }} />
+      {excerpt ? <div dangerouslySetInnerHTML={{ __html: excerpt }} /> : null}
     </div>
   );
 };

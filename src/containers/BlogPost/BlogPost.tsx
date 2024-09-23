@@ -7,11 +7,11 @@ import BlogAuthor from '@/components/BlogAuthor';
 
 import styles from './BlogPost.module.scss';
 
-export type Props = Post & {
+type Props = Post & {
   className?: string;
 };
 
-export const BlogPost = ({ title, content, date, author }: Props) => {
+const BlogPost = ({ title, content, date, author }: Props) => {
   return (
     <Wrapper className={styles.post}>
       <BlogArticle

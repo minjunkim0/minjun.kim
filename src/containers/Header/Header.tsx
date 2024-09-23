@@ -1,17 +1,15 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 
 import AdjustIcon from '@/components/icons/AdjustIcon';
 import GithubIcon from '@/components/icons/GithubIcon';
 import InstagramIcon from '@/components/icons/InstagramIcon';
 import LinkedinIcon from '@/components/icons/LinkedinIcon';
 import Wrapper from '@/components/Wrapper';
-import Symbol from '@/components/UnderfrontSymbol';
-import TopHeading from '@/components/TopHeading';
 
 import styles from './Header.module.scss';
+import Logo from '@/components/Logo';
 
 function handleSwitchTheme() {
   if (typeof document === 'undefined') {
@@ -28,18 +26,17 @@ function handleSwitchTheme() {
   // setLocalStorage
   try {
     localStorage.setItem('theme', setTheme);
-  } catch (err) {}
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  } catch (err) {
+    //
+  }
 }
 
 export const Header = () => {
   return (
     <header>
       <Wrapper className={styles.container}>
-        <TopHeading>
-          <Link href="/">
-            <Symbol height="30" className={styles.logo} />
-          </Link>
-        </TopHeading>
+        <Logo link className={styles.logo} />
         <div className={styles.utils}>
           <button
             type="button"

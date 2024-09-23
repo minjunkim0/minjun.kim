@@ -1,6 +1,5 @@
 import React from 'react';
 import BlogHeader from '../BlogHeader';
-import WPContent from '../WPContent';
 
 import styles from './BlogArticle.module.scss';
 import BlogContent from '../BlogContent';
@@ -19,10 +18,6 @@ export const BlogArticle = ({ title, date, content }: Props) => {
         title={title}
         date={date}
       />
-      {/* <WPContent
-        value={content}
-        className={styles.content}
-      /> */}
       <BlogContent value={content} className={styles.content} />
     </article>
   );

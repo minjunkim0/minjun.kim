@@ -22,7 +22,7 @@ const CodeBlock = ({ title, code, language }: Props) => {
       theme={themes.vsDark}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre title={title} className={cx(styles.root, className)}>
+        <pre title={title || undefined} className={cx(styles.root, className)}>
           <div
             data-language={language}
             className={styles.container}

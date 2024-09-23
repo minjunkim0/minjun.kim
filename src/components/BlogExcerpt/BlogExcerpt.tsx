@@ -1,9 +1,9 @@
-import React from 'react';
-import cx from 'classnames';
+import React from "react";
+import cx from "classnames";
 
-import BlogHeader from '../BlogHeader';
+import BlogHeader from "../BlogHeader";
 
-import styles from './BlogExcerpt.module.scss';
+import styles from "./BlogExcerpt.module.scss";
 
 export type Props = {
   title: string;
@@ -14,15 +14,17 @@ export type Props = {
   className?: string;
 };
 
-export const BlogExcerpt = ({ title, date, excerpt, url, source, className }: Props) => {
+export const BlogExcerpt = ({
+  title,
+  date,
+  excerpt,
+  url,
+  source,
+  className,
+}: Props) => {
   return (
     <div className={cx(styles.excerpt, className)}>
-      <BlogHeader
-        title={title}
-        date={date}
-        url={url}
-        source={source}
-      />
+      <BlogHeader title={title} date={date} url={url} source={source} />
       {excerpt ? <div dangerouslySetInnerHTML={{ __html: excerpt }} /> : null}
     </div>
   );

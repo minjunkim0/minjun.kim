@@ -1,10 +1,10 @@
-import React from 'react';
-import cx from 'classnames'
+import React from "react";
+import cx from "classnames";
 
-import Header from '@/containers/Header';
-import Footer from '@/components/Footer';
+import Header from "@/containers/Header";
+import Footer from "@/components/Footer";
 
-import styles from './Layout.module.scss';
+import styles from "./Layout.module.scss";
 
 export type Props = {
   className?: string;

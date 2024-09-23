@@ -1,7 +1,7 @@
-const withSourceMaps = require('@zeit/next-source-maps');
+const withSourceMaps = require("@zeit/next-source-maps");
 // const SentryWebpackPlugin = require('@sentry/webpack-plugin');
 
-const { homepage } = require('./package.json');
+const { homepage } = require("./package.json");
 
 // https://github.com/vercel/next.js/tree/canary/examples/with-sentry
 

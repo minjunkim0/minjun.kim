@@ -1,8 +1,8 @@
-import React from 'react';
-import BlogHeader from '../BlogHeader';
+import React from "react";
+import BlogHeader from "../BlogHeader";
 
-import styles from './BlogArticle.module.scss';
-import BlogContent from '../BlogContent';
+import styles from "./BlogArticle.module.scss";
+import BlogContent from "../BlogContent";
 
 export type Props = {
   className?: string;
@@ -14,10 +14,7 @@ export type Props = {
 export const BlogArticle = ({ title, date, content }: Props) => {
   return (
     <article className={styles.article}>
-      <BlogHeader
-        title={title}
-        date={date}
-      />
+      <BlogHeader title={title} date={date} />
       <BlogContent value={content} className={styles.content} />
     </article>
   );

@@ -16,11 +16,11 @@
     &:visited {
       color: inherit;
       text-decoration: underline;
-      transition: color .3s;
+      transition: color 0.3s;
     }
 
     &:hover,
-    &:focus{
+    &:focus {
       color: var(--link-focus-color);
     }
 
@@ -32,12 +32,12 @@
       display: none;
 
       &:before {
-        content: ' ';
+        content: " ";
       }
     }
 
     &:hover > span,
-    &:focus > span{
+    &:focus > span {
       display: inline;
     }
   }

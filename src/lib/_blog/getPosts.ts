@@ -1,5 +1,5 @@
-import { request } from 'lib/graphql';
-import type { BlogPosts } from './types';
+import { request } from "lib/graphql";
+import type { BlogPosts } from "./types";
 
 export type BlogPostsResponse = {
   posts: {

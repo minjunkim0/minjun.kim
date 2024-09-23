@@ -1,31 +1,31 @@
-'use client';
+"use client";
 
-import React from 'react';
+import React from "react";
 
-import AdjustIcon from '@/components/icons/AdjustIcon';
-import GithubIcon from '@/components/icons/GithubIcon';
-import InstagramIcon from '@/components/icons/InstagramIcon';
-import LinkedinIcon from '@/components/icons/LinkedinIcon';
-import Wrapper from '@/components/Wrapper';
+import AdjustIcon from "@/components/icons/AdjustIcon";
+import GithubIcon from "@/components/icons/GithubIcon";
+import InstagramIcon from "@/components/icons/InstagramIcon";
+import LinkedinIcon from "@/components/icons/LinkedinIcon";
+import Wrapper from "@/components/Wrapper";
 
-import styles from './Header.module.scss';
-import Logo from '@/components/Logo';
+import styles from "./Header.module.scss";
+import Logo from "@/components/Logo";
 
 function handleSwitchTheme() {
-  if (typeof document === 'undefined') {
+  if (typeof document === "undefined") {
     return;
   }
 
   const html = document.documentElement;
-  const theme = html.getAttribute('data-theme');
-  const setTheme = theme === 'light' ? '' : 'light';
+  const theme = html.getAttribute("data-theme");
+  const setTheme = theme === "light" ? "" : "light";
 
   // setAttribute
-  html.setAttribute('data-theme', setTheme);
+  html.setAttribute("data-theme", setTheme);
 
   // setLocalStorage
   try {
-    localStorage.setItem('theme', setTheme);
+    localStorage.setItem("theme", setTheme);
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (err) {
     //

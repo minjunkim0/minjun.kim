@@ -16,6 +16,6 @@ export type BlogPost = Readonly<{
   };
 }>;
 
-export type BlogPosts = Omit<BlogPost, 'content'>;
+export type BlogPosts = Omit<BlogPost, "content">;
 
-export type BlogSlugs = Pick<BlogPost, 'slug' | 'date'>;
+export type BlogSlugs = Pick<BlogPost, "slug" | "date">;

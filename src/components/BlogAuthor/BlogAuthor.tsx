@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import styles from './BlogAuthor.module.scss';
+import styles from "./BlogAuthor.module.scss";
 
 export type Props = {
   className?: string;
@@ -16,10 +16,15 @@ export const BlogAuthor = ({ avatar, name, description }: Props) => {
         <span
           role="img"
           className={styles.avatar}
-          style={{ backgroundImage: typeof avatar === 'string' ? `url(${avatar})` : undefined }}
+          style={{
+            backgroundImage:
+              typeof avatar === "string" ? `url(${avatar})` : undefined,
+          }}
         />
         <div className={styles.description}>
-          <p><strong>{name}</strong></p>
+          <p>
+            <strong>{name}</strong>
+          </p>
           <p>{description}</p>
         </div>
       </aside>

@@ -1,24 +1,19 @@
-import React from 'react';
+import React from "react";
 
-import type { Post } from '@/types/post';
-import Wrapper from '@/components/Wrapper';
-import BlogArticle from '@/components/BlogArticle';
-import BlogAuthor from '@/components/BlogAuthor';
+import type { Post } from "@/lib/blog/types";
+import Wrapper from "@/components/Wrapper";
+import BlogArticle from "@/components/BlogArticle";
 
-import styles from './BlogPost.module.scss';
+import styles from "./BlogPost.module.scss";
 
 type Props = Post & {
   className?: string;
 };
 
-const BlogPost = ({ title, content, date, author }: Props) => {
+const BlogPost = ({ title, content, date }: Props) => {
   return (
     <Wrapper className={styles.post}>
-      <BlogArticle
-        title={title}
-        content={content}
-        date={date}
-      />
+      <BlogArticle title={title} content={content} date={date} />
       {/* <BlogAuthor
         name={author.name}
         description={author.description}

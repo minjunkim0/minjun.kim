@@ -16,7 +16,6 @@ export default function ArticlePage({ params }: Props) {
   //   return <BlogPost {...post} />;
   // }
 
-
   return <BlogPost {...post} />;
   return null;
 }
@@ -39,7 +38,7 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
-export  function generateStaticParams() {
+export function generateStaticParams() {
   const posts = getAllPosts();
 
   return posts.map((post) => ({

@@ -1,9 +1,8 @@
-import React, { useMemo } from 'react';
-import moment from 'moment';
-import Link from 'next/link';
-import { defaultBlogPath } from '@/lib/getBlogPath';
+import React, { useMemo } from "react";
+import moment from "moment";
+import Link from "next/link";
 
-import styles from './BlogHeader.module.scss';
+import styles from "./BlogHeader.module.scss";
 
 export type Props = {
   url?: string;
@@ -14,18 +13,13 @@ export type Props = {
 };
 
 export const BlogHeader = ({ title, date, url, source }: Props) => {
-  const created = useMemo(
-    () => moment(date).format('YYYY/MM/DD'),
-    [date],
-  );
+  const created = useMemo(() => moment(date).format("YYYY/MM/DD"), [date]);
   return (
     <div className={styles.header}>
       <div className={styles.title}>
         {url ? (
           <h1>
-            <Link href={url}>
-                {title}
-            </Link>
+            <Link href={url}>{title}</Link>
           </h1>
         ) : (
           <h1>{title}</h1>
@@ -33,7 +27,12 @@ export const BlogHeader = ({ title, date, url, source }: Props) => {
       </div>
       <div className={styles.info}>
         <span>{created}</span>
-        {source ? <> • <span>{source}</span></> : null}
+        {source ? (
+          <>
+            {" "}
+            • <span>{source}</span>
+          </>
+        ) : null}
       </div>
     </div>
   );

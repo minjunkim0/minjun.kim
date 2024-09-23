@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "next",
-    "lint": "next lint --fix --ext tsx,jsx,ts,js ."
+    "lint": "next lint --fix --ext tsx,jsx,ts,js .",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@emotion/css": "^11.11.2",

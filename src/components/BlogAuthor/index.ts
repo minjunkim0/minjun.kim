@@ -1,2 +1,2 @@
-export { default } from './BlogAuthor';
-export * from './BlogAuthor';
+export { default } from "./BlogAuthor";
+export * from "./BlogAuthor";

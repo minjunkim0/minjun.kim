@@ -5,7 +5,7 @@ import remarkGfm from "remark-gfm";
 
 import CodeBlock from "../CodeBlock";
 
-import styles from "./BlogContent.module.scss";
+import styles from "./PostContent.module.scss";
 
 const MarkdownCode: Components["code"] = ({ children, className, node }) => {
   // https://github.com/remarkjs/react-markdown/issues/820#issuecomment-2108253421
@@ -42,7 +42,7 @@ type Props = {
   className?: string;
 };
 
-const BlogContent = async ({ value, className }: Props) => {
+const PostContent = async ({ value, className }: Props) => {
   return (
     <div className={cx(styles.content, className)}>
       <Markdown
@@ -58,4 +58,4 @@ const BlogContent = async ({ value, className }: Props) => {
   );
 };
 
-export default React.memo(BlogContent);
+export default React.memo(PostContent);

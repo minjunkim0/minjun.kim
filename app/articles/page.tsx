@@ -1,9 +1,9 @@
 import React from "react";
 import type { NextPage } from "next";
-import BlogPosts from "@/containers/BlogPosts";
+import Posts from "@/containers/Posts";
 
 const ArticlesPage: NextPage = () => {
-  return <BlogPosts />;
+  return <Posts />;
 };
 
 export default ArticlesPage;

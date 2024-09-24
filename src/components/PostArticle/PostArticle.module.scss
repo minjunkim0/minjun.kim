@@ -7,9 +7,9 @@
   transition-property: color;
   transition-duration: var(--transituin-duration);
 
-  @media screen and (min-width: 800px) {
-    font-size: 1.1rem;
-  }
+  // @media screen and (min-width: 800px) {
+  //   font-size: 1.1rem;
+  // }
 
   p > code,
   p > a > code {

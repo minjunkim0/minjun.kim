@@ -1,11 +1,11 @@
 import React from "react";
 import cx from "classnames";
 
-import BlogHeader from "../BlogHeader";
+import PostHeader from "../PostHeader";
 
-import styles from "./BlogExcerpt.module.scss";
+import styles from "./PostExcerpt.module.scss";
 
-export type Props = {
+type Props = {
   title: string;
   date: string;
   excerpt?: string;
@@ -14,7 +14,7 @@ export type Props = {
   className?: string;
 };
 
-export const BlogExcerpt = ({
+const PostExcerpt = ({
   title,
   date,
   excerpt,
@@ -24,10 +24,10 @@ export const BlogExcerpt = ({
 }: Props) => {
   return (
     <div className={cx(styles.excerpt, className)}>
-      <BlogHeader title={title} date={date} url={url} source={source} />
+      <PostHeader title={title} date={date} url={url} source={source} />
       {excerpt ? <div dangerouslySetInnerHTML={{ __html: excerpt }} /> : null}
     </div>
   );
 };
 
-export default BlogExcerpt;
+export default PostExcerpt;

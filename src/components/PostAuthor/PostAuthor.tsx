@@ -1,15 +1,15 @@
 import React from "react";
 
-import styles from "./BlogAuthor.module.scss";
+import styles from "./PostAuthor.module.scss";
 
-export type Props = {
+type Props = {
   className?: string;
   avatar?: string;
   name: string;
   description: string;
 };
 
-export const BlogAuthor = ({ avatar, name, description }: Props) => {
+const PostAuthor = ({ avatar, name, description }: Props) => {
   return (
     <div className={styles.container}>
       <aside className={styles.author}>
@@ -32,4 +32,4 @@ export const BlogAuthor = ({ avatar, name, description }: Props) => {
   );
 };
 
-export default BlogAuthor;
+export default PostAuthor;

@@ -2,9 +2,20 @@ import React, { useMemo } from "react";
 import moment from "moment";
 import Link from "next/link";
 
-import styles from "./BlogHeader.module.scss";
+import styles from "./PostHeader.module.scss";
 
-export type Props = {
+const PostLink = ({
+  href,
+  children,
+}: React.PropsWithChildren<{ href: string }>) => {
+  if (/^https?:\/\//i.test(href)) {
+    <a href={href}>{children}</a>;
+  }
+
+  return <Link href={href}>{children}</Link>;
+};
+
+type Props = {
   url?: string;
   title: string;
   date: string;
@@ -12,14 +23,14 @@ export type Props = {
   source?: string;
 };
 
-export const BlogHeader = ({ title, date, url, source }: Props) => {
+const PostHeader = ({ title, date, url, source }: Props) => {
   const created = useMemo(() => moment(date).format("YYYY/MM/DD"), [date]);
   return (
     <div className={styles.header}>
       <div className={styles.title}>
         {url ? (
           <h1>
-            <Link href={url}>{title}</Link>
+            <PostLink href={url}>{title}</PostLink>
           </h1>
         ) : (
           <h1>{title}</h1>
@@ -38,4 +49,4 @@ export const BlogHeader = ({ title, date, url, source }: Props) => {
   );
 };
 
-export default BlogHeader;
+export default PostHeader;

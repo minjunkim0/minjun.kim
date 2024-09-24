@@ -9,7 +9,7 @@ const Posts = () => {
       <PostExcerpt
         title="Next.js와 WordPress로 블로그 만들기"
         date="2020-05-24"
-        url="/post/next-js-wp-graphql-static-blog"
+        url="/posts/next-js-wp-graphql-static-blog"
       />
       <PostExcerpt
         title="드디어 메인 홈 개편! 다시 시작!"

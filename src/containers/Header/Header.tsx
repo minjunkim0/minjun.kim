@@ -1,45 +1,42 @@
-import React, { useCallback } from 'react';
-import Link from 'next/link';
+"use client";
 
-import AdjustIcon from 'components/icons/AdjustIcon';
-import GithubIcon from 'components/icons/GithubIcon';
-import InstagramIcon from 'components/icons/InstagramIcon';
-import LinkedinIcon from 'components/icons/LinkedinIcon';
-import Wrapper from 'components/Wrapper';
-import Symbol from 'components/UnderfrontSymbol';
-import TopHeading from 'components/TopHeading';
+import React from "react";
 
-import styles from './Header.module.scss';
+import AdjustIcon from "@/components/icons/AdjustIcon";
+import GithubIcon from "@/components/icons/GithubIcon";
+import InstagramIcon from "@/components/icons/InstagramIcon";
+import LinkedinIcon from "@/components/icons/LinkedinIcon";
+import Wrapper from "@/components/Wrapper";
 
-function switchTheme() {
-  if (typeof document === 'undefined') {
+import styles from "./Header.module.scss";
+import Logo from "@/components/Logo";
+
+function handleSwitchTheme() {
+  if (typeof document === "undefined") {
     return;
   }
 
   const html = document.documentElement;
-  const theme = html.getAttribute('data-theme');
-  const setTheme = theme === 'light' ? '' : 'light';
+  const theme = html.getAttribute("data-theme");
+  const setTheme = theme === "light" ? "" : "light";
 
   // setAttribute
-  html.setAttribute('data-theme', setTheme);
+  html.setAttribute("data-theme", setTheme);
 
   // setLocalStorage
   try {
-    localStorage.setItem('theme', setTheme);
-  } catch (err) {}
+    localStorage.setItem("theme", setTheme);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  } catch (err) {
+    //
+  }
 }
 
 export const Header = () => {
-  const handleSwitchTheme = useCallback(switchTheme, []);
-
   return (
     <header>
       <Wrapper className={styles.container}>
-        <TopHeading>
-          <Link href="/blog">
-            <a><Symbol height="30" className={styles.logo} /></a>
-          </Link>
-        </TopHeading>
+        <Logo link className={styles.logo} />
         <div className={styles.utils}>
           <button
             type="button"

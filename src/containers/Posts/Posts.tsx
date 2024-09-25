@@ -27,7 +27,7 @@ const Posts = () => {
         title="레거시 시스템 탈출과 React 도입기"
         date="2018-12-26"
         url="https://youtu.be/7Tk-dQVhk18"
-        source="와디즈 서비스"
+        source="XEOpenSeminar (Youtube)"
       />
       <PostExcerpt
         title="플라바 클리퍼 제작 후기"

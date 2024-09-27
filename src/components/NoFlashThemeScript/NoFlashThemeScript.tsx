@@ -1,5 +1,4 @@
 import React from "react";
-import Script from "next/script";
 
 const storageKey = "theme";
 const noFlash = `(function() {
@@ -27,7 +26,6 @@ if (preferredTheme !== null) {
 const NoFlashThemeScript = () => (
   <script
     id="no-flash-theme-script"
-    strategy="beforeInteractive"
     dangerouslySetInnerHTML={{
       __html: noFlash,
     }}

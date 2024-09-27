@@ -1594,6 +1594,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vercel/analytics@npm:1.3.1":
+  version: 1.3.1
+  resolution: "@vercel/analytics@npm:1.3.1"
+  dependencies:
+    server-only: "npm:^0.0.1"
+  peerDependencies:
+    next: ">= 13"
+    react: ^18 || ^19
+  peerDependenciesMeta:
+    next:
+      optional: true
+    react:
+      optional: true
+  checksum: 10c0/a8c3d363a3327a4bb6b555374eecc814fc6840870c757ea96227111692a219916b960081424d46b8d5f5d84bcd40b8078bc882b774ab4dfd8e77f67d61b38ab1
+  languageName: node
+  linkType: hard
+
 "@zeit/next-source-maps@npm:0.0.3":
   version: 0.0.3
   resolution: "@zeit/next-source-maps@npm:0.0.3"
@@ -5352,6 +5369,7 @@ __metadata:
     "@types/react-dom": "npm:^18"
     "@typescript-eslint/eslint-plugin": "npm:8.6.0"
     "@typescript-eslint/parser": "npm:8.6.0"
+    "@vercel/analytics": "npm:1.3.1"
     "@zeit/next-source-maps": "npm:0.0.3"
     classnames: "npm:2.2.6"
     dotenv: "npm:8.2.0"
@@ -6448,6 +6466,13 @@ __metadata:
   bin:
     semver: bin/semver.js
   checksum: 10c0/88f33e148b210c153873cb08cfe1e281d518aaa9a666d4d148add6560db5cd3c582f3a08ccb91f38d5f379ead256da9931234ed122057f40bb5766e65e58adaf
+  languageName: node
+  linkType: hard
+
+"server-only@npm:^0.0.1":
+  version: 0.0.1
+  resolution: "server-only@npm:0.0.1"
+  checksum: 10c0/4704f0ef85da0be981af6d4ed8e739d39bcfd265b9c246a684060acda5642d0fdc6daffc2308e71e2682c5f508090978802eae0a77623c9b90a49f9ae68048d6
   languageName: node
   linkType: hard
 

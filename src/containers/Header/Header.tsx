@@ -22,14 +22,6 @@ function handleSwitchTheme() {
 
   // setAttribute
   html.setAttribute("data-theme", setTheme);
-
-  // setLocalStorage
-  try {
-    localStorage.setItem("theme", setTheme);
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  } catch (err) {
-    //
-  }
 }
 
 export const Header = () => {

@@ -1,5 +1,6 @@
 import { Nunito } from "next/font/google";
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 
 import "./globals.css";
 
@@ -47,7 +48,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko" className={nunito.variable}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

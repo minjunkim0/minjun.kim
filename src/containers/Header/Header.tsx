@@ -38,7 +38,7 @@ export const Header = () => {
             <AdjustIcon className={styles.icon} />
           </button>
           <a
-            href="https://www.linkedin.com/in/minjunk"
+            href="https://www.linkedin.com/in/minjun0219"
             target="_blank"
             rel="noopener noreferrer nofollow"
             className={styles.mode}
@@ -54,7 +54,7 @@ export const Header = () => {
             <InstagramIcon className={styles.icon} />
           </a>
           <a
-            href="https://github.com/minjunk"
+            href="https://github.com/minjun0219"
             target="_blank"
             rel="noopener noreferrer nofollow"
             className={styles.mode}
